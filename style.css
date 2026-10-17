@@ -499,3 +499,77 @@ html:has(.invitation-entry[open]) body>.rose-garden { display:none; }
   .entry-music-note { margin-top:6px; }
 }
 @media(prefers-reduced-motion:reduce) { .rose-confetti { display:none; } }
+
+/* Keep the same editorial composition across desktop and phone. */
+@media(max-width:900px) {
+  .hero { grid-template-columns:minmax(0,1fr) minmax(0,1fr); text-align:left; gap:5%; padding:42px 6%; }
+  .hero-date { justify-content:flex-start; }
+  .hero-description { margin-left:0; margin-right:0; }
+  .countdown-section { grid-template-columns:minmax(0,1fr) minmax(0,1fr); text-align:left; gap:16px; }
+  .countdown-note { grid-column:2; text-align:right; }
+}
+@media(max-width:700px) {
+  .hero { padding:35px 5% 32px; gap:5%; align-items:center; }
+  .hero .eyebrow { font-size:7px; letter-spacing:1.1px; margin-bottom:12px; }
+  .tiny-star { font-size:11px; margin-right:3px; }
+  .intro { font-size:clamp(11px,2.8vw,17px); line-height:1.5; }
+  .hero h1 { font-size:clamp(41px,11.7vw,76px); line-height:1.15; margin:10px 0 14px; }
+  .turns { font-size:clamp(16px,4.1vw,28px); line-height:1.35; letter-spacing:-.6px; margin-top:6px; }
+  .hero-description { font-size:clamp(10px,2.6vw,14px); line-height:1.65; margin-bottom:14px; }
+  .hero .button { width:auto; max-width:100%; min-height:44px; padding:9px 10px; font-size:9px; gap:7px; }
+  .hero-date { font-size:7px; letter-spacing:.6px; margin-top:13px; line-height:1.8; }
+  .hero-date b { padding:0 2px; }
+  .portrait-feature { padding:5px; max-width:none; margin:0; }
+  .portrait-feature::before { inset:-5px 9px; }
+  .portrait-feature figcaption { display:block; text-align:center; padding:9px 1px 3px; }
+  .portrait-feature figcaption span { display:block; font-size:6px; letter-spacing:1px; }
+  .portrait-feature figcaption em { display:block; font-size:11px; margin-top:4px; }
+  .portrait-corner { font-size:22px; left:-12px; }
+  .portrait-hint { font-size:6px; letter-spacing:.8px; padding:18px 7px 8px; }
+  .countdown-section { padding:24px 5%; gap:12px; }
+  .countdown-section .eyebrow { font-size:7px; letter-spacing:1px; margin-bottom:8px; }
+  .countdown-section h2 { font-size:clamp(18px,4.5vw,28px); letter-spacing:-.5px; }
+  .countdown { gap:4px; }
+  .countdown span { font-size:clamp(22px,5.7vw,34px); }
+  .countdown small { font-size:6px; letter-spacing:.4px; }
+  .countdown-note { font-size:8px; margin:0; }
+  .portrait-gallery { padding:34px 5%; }
+  .gallery-intro { display:flex; text-align:left; gap:16px; align-items:end; margin-bottom:22px; }
+  .gallery-intro>div { flex:1; }
+  .gallery-intro>p { flex:1; font-size:9px; margin:0; line-height:1.65; }
+  .gallery-intro>p span { font-size:8px; }
+  .gallery-intro .eyebrow { font-size:7px; letter-spacing:1px; }
+  .gallery-intro h2 { font-size:24px; }
+  .gallery-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; max-width:none; }
+  .gallery-grid figure:nth-child(2) { margin-top:28px; }
+  .gallery-photo { padding:3px; }
+  .gallery-photo>span { width:22px; height:22px; font-size:10px; bottom:8px; right:8px; }
+  .gallery-grid figcaption { gap:5px; margin-top:9px; }
+  .gallery-grid figcaption>span { font-size:7px; }
+  .gallery-grid figcaption em { font-size:12px; line-height:1.4; }
+  .gallery-invite { font-size:14px; margin-top:25px; }
+  .celebration { padding:20px 5% 30px; }
+  .section-heading h2 { font-size:26px; }
+  .section-heading .eyebrow { font-size:8px; }
+  .section-heading>p:last-child { font-size:11px; max-width:340px; }
+  .details-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .detail-card,.detail-card:first-child,.detail-card:last-child { padding:20px 9px; text-align:left; }
+  .detail-card:first-child { padding-left:0; }
+  .detail-card:last-child { padding-right:0; }
+  .detail-card+.detail-card { border-top:0; border-left:1px solid var(--line); }
+  .detail-number { font-size:7px; letter-spacing:.7px; }
+  .detail-card h3 { font-size:16px; line-height:1.45; margin:14px 0 8px; }
+  .detail-highlight { font-size:12px; line-height:1.5; }
+  .detail-card>p:not(.detail-highlight),.detail-footnote { font-size:9px; line-height:1.7; }
+  .text-link { font-size:9px; gap:5px; padding:8px 0; }
+  .dress-section { margin:0 5% 35px; padding:28px 20px; }
+  .honor-section { padding:0 5% 40px; }
+  .honor-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .honor-card { padding:22px 12px; }
+  .honor-card header { padding-bottom:18px; }
+  .honor-card header .eyebrow { font-size:7px; letter-spacing:.7px; }
+  .honor-card h3 { font-size:25px; }
+  .honor-names li { grid-template-columns:16px minmax(0,1fr); gap:5px; font-size:11px; line-height:1.6; padding:10px 0; }
+  .honor-names li::before { font-size:8px; }
+  .closing h2 { font-size:30px; }
+}
