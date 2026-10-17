@@ -154,4 +154,5 @@
   audio.addEventListener('pause', syncMusic);
   audio.addEventListener('error', () => { status.textContent = 'Background music is unavailable.'; syncMusic(); });
   entry.showModal();
+  entry.focus({preventScroll:true});
 })();
