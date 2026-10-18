@@ -724,3 +724,41 @@ html:has(.invitation-entry[open]) body>.rose-garden { display:none; }
   .detail-card .text-link { font-size:8px; gap:3px; }
   .closing-note h2 { font-size:clamp(21px,5.4vw,32px); }
 }
+
+/* Clear, readable opening instructions with a smooth, compositor-only reveal. */
+.entry-open-label {
+  display:block; margin:23px auto 8px; padding:15px 18px;
+  background:linear-gradient(120deg,#f0d9ae,#cfac74);
+  color:#3b1422; border:1px solid #f3ddb6; border-radius:4px;
+  font:600 18px/1.45 var(--sans); letter-spacing:0; text-transform:none;
+  box-shadow:0 5px 20px #13050c22;
+}
+.entry-open-label::before { display:none; }
+.entry-open-label>span { padding-left:5px; }
+.entry-open-label small { display:block; font-size:13px; font-weight:400; margin-top:4px; color:#5b342b; }
+.entry-music-note { font-size:15px; }
+.open-quietly { font-size:14px; min-height:48px; }
+.entry-opening .entry-open-label { opacity:0; transition:opacity .4s ease; }
+.entry-opening .envelope-flap,.entry-opening .envelope-letter,.entry-opening .wax-seal { will-change:transform,opacity; }
+.entry-opening .envelope-flap { animation:invitation-flap .9s .15s cubic-bezier(.4,0,.2,1) forwards; }
+.entry-opening .envelope-letter { animation:smooth-letter-rise 1.35s .8s cubic-bezier(.22,1,.36,1) forwards; }
+.entry-opening { animation:invitation-dissolve 1s 2.05s ease-in-out forwards; }
+.entry-opening::backdrop { animation:velvet-backdrop 1s 2.05s ease-in-out forwards; }
+@keyframes smooth-letter-rise { to { transform:translate3d(0,-36%,0); } }
+@media(max-width:700px) {
+  .entry-open-label { font-size:17px; padding:13px 10px; letter-spacing:0; }
+  .entry-open-label small { font-size:13px; }
+  .entry-celebrant { margin-bottom:15px; }
+}
+@media(max-height:760px) {
+  .entry-crest { display:none; }
+  .entry-inner { padding:8px 0; }
+  .entry-open-label { margin-top:18px; }
+  .envelope-button { max-width:370px; }
+  .entry-music-note { margin-top:6px; }
+}
+@media(max-height:600px) {
+  .envelope-button { max-width:270px; }
+  .entry-open-label { font-size:16px; margin-top:12px; padding:10px; }
+  .entry-open-label small { font-size:12px; }
+}
